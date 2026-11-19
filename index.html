@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terengganu: Antara Gunung & Laut</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            400: '#38bdf8',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        mountain: {
+                            50: '#ecfdf5',
+                            400: '#34d399',
+                            600: '#059669',
+                            900: '#064e3b',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom right, rgba(6, 78, 59, 0.8), rgba(12, 74, 110, 0.8)), url('https://images.unsplash.com/photo-1540202404-b711c07925e0?auto=format&fit=crop&q=80&w=1920')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #064e3b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8; 
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-ocean-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                    <svg class="w-8 h-8 text-mountain-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14 6l-3.8 5 1.8 2.4L15.5 8 19 12h-4.6l-2.4 3H22L14 6zM4.5 12L2 15h11.4l-2.2-3H4.5zM12 18H2v3h20v-3H12z"/></svg>
+                    Terengganu<span class="text-ocean-400">Alam</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#utama" class="text-white hover:text-mountain-400 font-medium transition-colors">Utama</a>
+                    <a href="#galeri" class="text-white hover:text-mountain-400 font-medium transition-colors">Galeri</a>
+                    <a href="#tentang" class="text-white hover:text-mountain-400 font-medium transition-colors">Tentang</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="utama" class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-ocean-900/90 pointer-events-none"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-mountain-500/30 border border-mountain-400/50 text-mountain-50 text-sm font-semibold tracking-wide mb-6 uppercase backdrop-blur-sm">
+                Mutiara Pantai Timur
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Harmoni <span class="text-transparent bg-clip-text bg-gradient-to-r from-mountain-400 to-ocean-400">Gunung & Laut</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-slate-200 mb-10 font-light">
+                Terokai keindahan alam semula jadi Terengganu, dari puncak gunung yang megah hingga ke dasar laut yang mendamaikan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#galeri" class="px-8 py-4 rounded-full bg-gradient-to-r from-mountain-600 to-ocean-600 text-white font-semibold shadow-lg hover:shadow-ocean-500/50 hover:-translate-y-1 transition-all duration-300">
+                    Terokai Galeri
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#galeri" class="text-white/70 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-ocean-900 mb-4">Destinasi Menakjubkan</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-mountain-400 to-ocean-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+                    Saksikan koleksi visual kami yang memaparkan keunikan dan keindahan landskap semula jadi di negeri Terengganu Darul Iman.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Item 1: Pulau Redang (Laut) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596423735880-5fec87920ec0?auto=format&fit=crop&q=80&w=800" alt="Pulau Redang" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <a href="pulau-redang.html" class="btn">Lihat Lanjut</a>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-ocean-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Laut & Pantai</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Pulau Redang</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Syurga tropika dengan air laut jernih kristal dan hidupan marin yang pelbagai, menjadikannya syurga bagi penyelam.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Gunung Tebu (Gunung) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" alt="Gunung Tebu" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mountain-900/90 via-mountain-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-mountain-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Pergunungan</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Gunung Tebu</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Puncak setinggi 1,039 meter yang menjanjikan pengembaraan mendaki yang mencabar namun memuaskan dengan pemandangan Laut China Selatan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Tasik Kenyir (Tasik/Alam) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=800" alt="Tasik Kenyir" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-mountain-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-mountain-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Tasik & Hutan</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Tasik Kenyir</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Tasik buatan manusia terbesar di Asia Tenggara yang dikelilingi hutan hujan tropika tertua di dunia, syurga ekopelancongan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Bukit Keluang (Gabungan Laut & Bukit) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?auto=format&fit=crop&q=80&w=800" alt="Bukit Keluang" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-ocean-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Pesisir Pantai</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Bukit Keluang</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Kombinasi unik bukit berbatu kapur yang merentasi perairan laut pantai timur, menawarkan pemandangan matahari terbit yang menawan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Air Terjun Sekayu (Air Dalam Hutan) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?auto=format&fit=crop&q=80&w=800" alt="Air Terjun Sekayu" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mountain-900/90 via-mountain-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-mountain-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Air Terjun</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Hutan Lipur Sekayu</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Air terjun bertingkat yang dingin dan menyegarkan, tersembunyi rapi di sebalik rimbunan hutan simpan yang tebal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Pulau Perhentian (Laut) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600207438283-a5de6d9df13e?auto=format&fit=crop&q=80&w=800" alt="Pulau Perhentian" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-ocean-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Laut & Pantai</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Pulau Perhentian</h3>
+                        <p class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            Dikelilingi terumbu karang yang masih terpelihara rapi, sesuai untuk berehat dari hiruk-pikuk kota sambil menikmati bayu laut.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="py-24 bg-white relative overflow-hidden">
+        <!-- Abstract Shapes for decoration -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-ocean-50 blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-mountain-50 blur-3xl opacity-60"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-br from-ocean-900 to-mountain-900 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-12 md:p-16 flex flex-col justify-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Mengenai Terengganu</h2>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            Terengganu Darul Iman bukanlah sekadar negeri di pantai timur. Ia adalah kanvas alam di mana birunya lautan Cina Selatan bertemu dengan lilitan rantaian gunung-ganang yang menghijau. 
+                        </p>
+                        <p class="text-slate-300 mb-8 leading-relaxed">
+                            Di sini, setiap sudut menjanjikan ketenangan jiwa. Sama ada anda mencari pengembaraan mendaki <strong class="text-mountain-400">Gunung Tebu</strong>, menyelusuri flora fauna <strong class="text-mountain-400">Tasik Kenyir</strong>, ataupun berehat di tepian pantai <strong class="text-ocean-400">Pulau Redang</strong>, Terengganu menjanjikan memori yang kekal abadi.
+                        </p>
+                        <div class="mt-auto">
+                            <button class="px-6 py-3 rounded-full border border-white/30 text-white hover:bg-white hover:text-ocean-900 transition-colors duration-300 font-medium">
+                                Ketahui Lebih Lanjut
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative h-64 lg:h-auto">
+                        <img src="https://images.unsplash.com/photo-1582236302283-e18e0df3e3bb?auto=format&fit=crop&q=80&w=800" alt="Alam Terengganu" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-l from-transparent to-mountain-900/90 hidden lg:block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-mountain-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14 6l-3.8 5 1.8 2.4L15.5 8 19 12h-4.6l-2.4 3H22L14 6zM4.5 12L2 15h11.4l-2.2-3H4.5zM12 18H2v3h20v-3H12z"/></svg>
+                    <span class="text-xl font-bold text-white">Terengganu<span class="text-ocean-400">Alam</span></span>
+                </div>
+                <div class="text-sm">
+                    &copy; 2024 Galeri Alam Terengganu. Hak Cipta Terpelihara.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-ocean-400 transition-colors">Facebook</a>
+                    <a href="#" class="hover:text-mountain-400 transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-ocean-400 transition-colors">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Interaction -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('bg-slate-900/95', 'backdrop-blur-sm', 'py-3', 'shadow-lg');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('bg-slate-900/95', 'backdrop-blur-sm', 'py-3', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
