@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulau Redang - Galeri Alam Terengganu</title>
+    <style>
+        /* Tetapan Asas & Tema Warna */
+        :root {
+            --ocean-blue: #006994;
+            --ocean-light: #48b4e0;
+            --mountain-green: #009B77;
+            --text-dark: #333;
+            --bg-light: #f4f9f9;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Bahagian Header/Hero Kecil */
+        header {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--mountain-green));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .btn-kembali {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-kembali:hover {
+            background-color: var(--ocean-light);
+            color: white;
+        }
+
+        /* Susun Atur Kandungan */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: var(--ocean-blue);
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--mountain-green);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Kesan Peta 3D */
+        .map-container {
+            perspective: 1000px; /* Jarak perspektif 3D */
+            margin: 40px 0;
+        }
+
+        .map-3d {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: rotateX(5deg) rotateY(-2deg); /* Sudut condong 3D */
+            transition: transform 0.5s ease;
+            overflow: hidden;
+        }
+
+        .map-3d:hover {
+            transform: rotateX(0deg) rotateY(0deg); /* Kembali rata bila dilayang */
+        }
+
+        /* Susun Atur Grid untuk Pengenalan & Ciri-ciri */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--mountain-green);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top: 5px solid var(--ocean-light);
+        }
+
+        .card h3 {
+            color: var(--ocean-blue);
+            margin-top: 0;
+        }
+
+        .ciri-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ciri-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .ciri-list li::before {
+            content: '🌊';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Responsif untuk Telefon Pintar */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bahagian Header -->
+    <header>
+        <h1>Pulau Redang</h1>
+        <p>Mutiara Laut China Selatan</p>
+        <a href="index.html" class="btn-kembali">← Kembali ke Galeri Utama</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Peta 3D -->
+        <h2 class="section-title">Peta Lokasi (Paparan Satelit 3D)</h2>
+        <div class="map-container">
+            <div class="map-3d">
+                <!-- Kod Embed Google Maps dengan paparan satelit -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127392.38072049187!2d102.94695029051515!3d5.774577884841961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b71e16d41829e1%3A0x6b6c008a0d4c82c!2sRedang%20Island!5e1!3m2!1sen!2smy!4v1731976000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- Bahagian Informasi -->
+        <div class="info-grid">
+            <!-- Pengenalan -->
+            <div class="card">
+                <h3>Pengenalan</h3>
+                <p>Pulau Redang terletak di perairan Laut China Selatan dan merupakan salah satu pulau yang terbesar dan tercantik di pantai timur Malaysia. Terkenal dengan pasir pantainya yang memutih dan kejernihan air yang luar biasa, ia diiktiraf sebagai Taman Laut yang dilindungi.</p>
+                <p>Keindahan semula jadinya bukan sahaja menawarkan ketenangan jiwa, tetapi juga membangkitkan keharmonian antara elemen pergunungan hijau yang mengelilingi pulau ini dengan warna biru laut yang mendamaikan.</p>
+            </div>
+
+            <!-- Ciri-ciri -->
+            <div class="card">
+                <h3>Ciri-ciri Menarik</h3>
+                <ul class="ciri-list">
+                    <li><strong>Syurga Kehidupan Marin:</strong> Kaya dengan terumbu karang yang berwarna-warni, menjadikannya lokasi ideal untuk aktiviti snorkeling dan selaman skuba (scuba diving).</li>
+                    <li><strong>Pasir Putih Pesisir Pantai:</strong> Memiliki antara bentangan pasir pantai yang paling halus dan putih di Asia Tenggara, khususnya di kawasan Pasir Panjang.</li>
+                    <li><strong>Pusat Pemuliharaan Penyu:</strong> Menjadi habitat semula jadi dan kawasan perlindungan utama bagi spesies penyu mendarat dan bertelur.</li>
+                    <li><strong>Topografi Berbukit:</strong> Dikelilingi bukit-bukau berhutan tebal kehijauan, menawarkan trek hutan (jungle trekking) untuk pencinta alam darat.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
